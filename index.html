@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Air Draw Web</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-bg"></div>
+
+  <main class="app-shell">
+    <section class="stage" aria-label="Air draw stage">
+      <div class="canvas-wrap">
+        <video id="inputVideo" autoplay muted playsinline></video>
+        <canvas id="drawCanvas"></canvas>
+        <canvas id="landmarkCanvas"></canvas>
+
+        <div id="cameraLiveBadge" class="camera-live-badge">Camera ON</div>
+        <div id="statusBadge" class="status-badge">Camera is off</div>
+      </div>
+
+      <div id="modeIndicator" class="mode-indicator">
+        <span class="mode-chip">
+          <span class="mode-emoji">✊</span>
+          <span class="mode-text">IDLE</span>
+        </span>
+      </div>
+    </section>
+
+    <header class="topbar glass">
+      <div class="brand-wrap">
+        <div class="brand-dot"></div>
+        <h1>AIR DRAW</h1>
+      </div>
+
+      <div class="topbar-actions">
+        <button id="howToPlayBtn" class="btn btn-ghost">How to Play</button>
+        <button id="cameraBtn" class="btn btn-primary">Camera ON</button>
+        <button id="clearBtn" class="btn btn-ghost">Clear</button>
+        <button id="saveBtn" class="btn btn-ghost">Save as Image</button>
+      </div>
+    </header>
+
+    <aside class="sidebar glass" aria-label="Tools panel">
+      <h2>Tools</h2>
+
+      <div class="control-group">
+        <p class="label">Colors Palette</p>
+        <div id="palette" class="palette">
+          <button class="color-swatch active" data-color="#00eaff" style="--swatch:#00eaff"></button>
+          <button class="color-swatch" data-color="#4df3ff" style="--swatch:#4df3ff"></button>
+          <button class="color-swatch" data-color="#00a6ff" style="--swatch:#00a6ff"></button>
+          <button class="color-swatch" data-color="#7cffcb" style="--swatch:#7cffcb"></button>
+          <button class="color-swatch" data-color="#ffd166" style="--swatch:#ffd166"></button>
+          <button class="color-swatch" data-color="#ff4d9d" style="--swatch:#ff4d9d"></button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="label-row">
+          <p class="label">Thickness</p>
+          <span id="thicknessValue">6</span>
+        </div>
+        <input id="thicknessSlider" type="range" min="2" max="24" value="6" />
+      </div>
+
+      <div class="control-group">
+        <div class="label-row">
+          <p class="label">Glow</p>
+          <span id="glowValue">26</span>
+        </div>
+        <input id="glowSlider" type="range" min="8" max="60" value="26" />
+      </div>
+
+      <div class="gesture-help">
+        <h3>Gestures</h3>
+        <ul>
+          <li>☝️ Draw: index finger only</li>
+          <li>🤏 Grab: thumb + index pinch</li>
+          <li>✋ Erase: open palm</li>
+          <li>✊ Idle: fist</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <div id="helpModal" class="modal visible">
+    <div class="modal-card glass">
+      <h2>How to Play</h2>
+      <p>Use your hand in front of the camera to draw smooth strokes in the air.</p>
+      <ul>
+        <li>☝️ <strong>Drawing:</strong> raise only index finger.</li>
+        <li>🤏 <strong>Grab:</strong> pinch thumb + index to move strokes.</li>
+        <li>✋ <strong>Erase:</strong> open palm to erase nearby strokes.</li>
+        <li>✊ <strong>Idle:</strong> close fist to pause interaction.</li>
+      </ul>
+      <button id="startBtn" class="btn btn-primary modal-btn">Start Drawing</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
