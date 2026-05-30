@@ -2,7 +2,10 @@
 
 An advanced web application that allows you to draw in the air using just your hand gestures and webcam. No mouse or touch screen needed.
 
-![Air Draw Preview](https://via.placeholder.com/800x450/0f172a/22d3ee?text=Air+Draw+Neon)
+
+## 🌐 Live Demo
+
+**[Try Air Draw Now](https://air-draw-web-blue.vercel.app/)**
 
 ## ✨ Features
 
@@ -10,10 +13,10 @@ An advanced web application that allows you to draw in the air using just your h
 - **Grab & Move**: Pinch to select and drag any drawn shape or text
 - **Erase Mode**: Open palm with red erase circle
 - **Modern Glassmorphism UI** with dark elegant theme
-- **Full Screen Camera** experience
+- **Full Screen Camera** immersive experience
 - **Customizable Tools**: Colors, Thickness, Glow Intensity
 - **Save your artwork** as image
-- **How to Play** guided modal with smooth animations
+- **Beautiful How to Play** modal with smooth animations
 
 ## 🎯 Gestures
 
@@ -24,7 +27,7 @@ An advanced web application that allows you to draw in the air using just your h
 | **Open Palm**            | Erase                         |
 | **Closed Fist**          | Idle                          |
 
-## 🚀 How to Run
+## 🚀 How to Run Locally
 
 1. Clone the repository:
    ```bash
@@ -35,8 +38,7 @@ Allow camera access when prompted
 
 🛠️ Technologies Used
 
-MediaPipe Hands — Hand tracking
-HTML5 Canvas — Rendering
+MediaPipe Hands — Real-time hand tracking
+HTML5 Canvas — High-performance rendering
 Vanilla JavaScript (ES6+)
-CSS3 — Glassmorphism & Modern Design
-Responsive Layout
+CSS3 — Glassmorphism & modern animations
